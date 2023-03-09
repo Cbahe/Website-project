@@ -23,9 +23,46 @@
         </nav>
     </div>
     <div id="main">
-        main contact info
+        <h2>Stay up to date on the latest</h2>
+        <h4>we would inform you of trail closers, and group hikes</h4>
+        <form>
+            <label for="first_name">First Name:</label>
+            <input type="text" id="first_name" name="first_name" required><br>
+
+            <label for="last_name">Last Name:</label>
+            <input type="text" id="last_name" name="last_name" required><br>
+
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required><br>
+
+            <label for="cell_phone">Cell Phone:</label>
+            <input type="tel" id="cell_phone" name="cell_phone" required><br>
+
+            <label for="school_name">School Name:</label>
+            <input type="text" id="school_name" name="school_name" required><br>
+
+            <input type="submit" value="Submit">
+        </form>
     </div>
     <div id="foot">this is the foot info</div>
 </body>
 
-</html>
+<script>
+    const formEl = document.querySelector.('.form');
+    formEl.addEventListener('submit', event => {
+        event.preventDefault();
+
+        const formData = new FormData(formEl);
+        const data = Object.formEntries(formData);
+
+        fetch('https://regres.in/api/users', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data))
+        }).then(res => res.json())
+    .then(data => console.log(data))
+    .catch(error => console.log(error));
+    });
+</script></html>

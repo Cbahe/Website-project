@@ -6,7 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My First Template</title>
     <link rel="stylesheet" href="../CSS/temaplete.index.css">
+    <script>
+        function enlargeImage() {
+            var image = document.getElementById("myImage");
+            var width = image.offsetWidth;
+            var height = image.offsetHeight;
+            image.style.width = (width * 1.2) + "px";
+            image.style.height = (height * 1.2) + "px";
+        }
 
+        function shrinkImage() {
+            var image = document.getElementById("myImage");
+            image.style.width = "";
+            image.style.height = "";
+        }
+    </script>
 </head>
 
 <body>
@@ -24,10 +38,18 @@
     </div>
     <div id="main">
         <p>This is a hiking page for hikers in Arizona</p>
-        <p>Top Arizona hikes in the Phoenix areas</p>
-        <img src="../Images/Catus.jpg" style="width:auto; height:350px;" />
-    </div>
-    <div id="foot">this is the foot info.</div>
-</body>
+        <img id="myImage" src="../Images/Catus.jpg" onmouseover="enlargeImage()" onmouseout="shrinkImage() " style="width:auto; height:350px;" />
 
-</html>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    <script>
+        var button = document.createElement("button");
+        button.innerHTML = "AZ Hikes";
+        button.onclick = function() {
+            window.location.href = "T3.html";
+        };
+        document.body.appendChild(button);
+        s
+    </script>
+    <div id="foot">this is the foot info.</div>
+</body></html>
